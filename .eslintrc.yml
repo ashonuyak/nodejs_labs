@@ -1,0 +1,83 @@
+env:
+  browser: true
+  es2021: true
+
+extends:
+  - airbnb-base
+  - eslint:recommended
+  - plugin:import/recommended
+  - plugin:import/typescript
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+  - plugin:sonarjs/recommended
+
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaVersion: 2021
+  sourceType: module
+
+plugins:
+  - '@typescript-eslint'
+  - 'sonarjs'
+
+rules:
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  no-var:
+    - error
+  no-console:
+    - warn
+  arrow-parens:
+    - error
+    - always
+  no-else-return:
+    - error
+    - allowElseIf: false
+  '@typescript-eslint/explicit-function-return-type':
+    - error
+    - allowTypedFunctionExpressions: true
+  '@typescript-eslint/quotes':
+    - error
+    - single
+    - avoid-escape
+  '@typescript-eslint/object-curly-spacing':
+    - error
+    - always
+  '@typescript-eslint/comma-dangle':
+    - error
+    - always-multiline
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - vars: all
+      args: after-used
+      argsIgnorePattern: ^_
+      caughtErrors: all
+  '@typescript-eslint/no-explicit-any':
+    - error
+  '@typescript-eslint/no-empty-interface':
+    - error
+    - allowSingleExtends: true
+  import/no-unresolved:
+    - off
+  import/no-default-export:
+    - error
+  import/order:
+    - error
+    - newlines-between: always
+      groups:
+        - builtin
+        - external
+        - internal
+        - - parent
+          - sibling
+          - index
+        - - object
+          - type
+          - unknown
+      pathGroupsExcludedImportTypes:
+        - internal
+      alphabetize:
+        order: asc
+        caseInsensitive: true
