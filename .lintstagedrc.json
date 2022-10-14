@@ -1,3 +1,3 @@
 {
-  "*": ["eslint --ext .js,.ts src/ --fix", "prettier --ext .js,.ts src/ --write"]
+  "*.{js,ts}": ["eslint --ext .js,.ts src/", "prettier --ext .js,.ts src/ --check"]
 }

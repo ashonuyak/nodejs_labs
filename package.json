@@ -9,7 +9,9 @@
     "eslint": "eslint --ext .js,.ts src/",
     "eslint:fix": "eslint --ext .js,.ts src/ --fix",
     "prettier": "prettier --ext .js,.ts src/ --check",
-    "prettier:fix": "prettier --ext .js,.ts src/ --write"
+    "prettier:fix": "prettier --ext .js,.ts src/ --write",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "prepare": "simple-git-hooks"
   },
   "repository": {
     "type": "git",
@@ -32,10 +34,11 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-sonarjs": "^0.16.0",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "npx simple-git-hooks && npx lint-staged"
   },
   "dependencies": {
     "typescript": "^4.8.4"
