@@ -8,8 +8,8 @@
     "build": "tsc",
     "eslint": "eslint --ext .js,.ts src/",
     "eslint:fix": "eslint --ext .js,.ts src/ --fix",
-    "prettier": "prettier --ext .js,.ts src/ --check",
-    "prettier:fix": "prettier --ext .js,.ts src/ --write",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
     "lint:fix": "npm run eslint:fix && npm run prettier:fix",
     "prepare": "simple-git-hooks"
   },
@@ -17,6 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/ashonuyak/nodejs_labs.git"
   },
+  "type": "module",
   "author": "ashonuyak",
   "license": "ISC",
   "bugs": {
