@@ -1,0 +1,46 @@
+{
+  "name": "nodejs_labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/src/index.js",
+    "build": "tsc",
+    "eslint": "eslint --ext .js,.ts src/",
+    "eslint:fix": "eslint --ext .js,.ts src/ --fix",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "prepare": "simple-git-hooks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashonuyak/nodejs_labs.git"
+  },
+  "type": "module",
+  "author": "ashonuyak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashonuyak/nodejs_labs/issues"
+  },
+  "homepage": "https://github.com/ashonuyak/nodejs_labs#readme",
+  "devDependencies": {
+    "@types/node": "^18.8.5",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx simple-git-hooks && npx lint-staged"
+  }
+}
