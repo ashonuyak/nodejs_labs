@@ -61,8 +61,16 @@ rules:
     - allowSingleExtends: true
   import/no-unresolved:
     - off
-  import/no-default-export:
-    - error
+  no-restricted-syntax:
+    - off
+  no-await-in-loop:
+    - off
+  consistent-return:
+    - off
+  no-shadow:
+    - off
+  no-constructor-return:
+    - off
   import/order:
     - error
     - newlines-between: always
