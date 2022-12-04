@@ -1,9 +1,10 @@
-import http from 'http'
-// Read Environment Parameters
-const port = Number(process.env.PORT) || 3001
-const greeting = 'Good evening, Mr Nosov'
-const server = http.createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.end(`${greeting}\n`)
+import router from './routes/index.js'
+import Server from './server.js'
+
+const PORT = parseInt(process.env.PORT || '8080', 10)
+
+const server = new Server()
+
+server.use(router).listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
 })
-server.listen(port)
