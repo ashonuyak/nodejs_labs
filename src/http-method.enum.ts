@@ -1,4 +1,4 @@
-enum HttpMethodEnum {
+const enum HttpMethodEnum {
   GET = 'GET',
   POST = 'POST',
   OPTIONS = 'OPTIONS',
